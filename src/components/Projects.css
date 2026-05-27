@@ -1,0 +1,157 @@
+.projects-grid {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 160px;
+  flex-shrink: 0;
+}
+
+/* Asymmetric grid layout */
+.card-left {
+  width: 48%;
+}
+
+.card-right {
+  width: 40%;
+}
+
+.img-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: #1c1c1e;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover img {
+  filter: grayscale(0%);
+}
+
+.project-info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-card:hover .project-info {
+  transform: translateX(10px);
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.project-category {
+  font-size: 13px;
+  color: #8e8e93;
+}
+
+/* Project Detail Container */
+.project-detail-container {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 160px;
+  align-items: flex-start;
+}
+
+.project-desc {
+  flex: 1;
+  color: #aeaeb2;
+  min-width: 0;
+}
+
+.project-desc h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.project-desc h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #aeaeb2;
+  margin-bottom: 30px;
+}
+
+.desc-section {
+  margin-bottom: 28px;
+}
+
+.desc-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FF3B30;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.desc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  font-size: 13px;
+  color: #ffffff;
+  padding: 4px 12px;
+  border: 1px solid #3a3a3c;
+  border-radius: 2px;
+}
+
+.desc-tags-cn {
+  font-size: 12px;
+  color: #636366;
+  margin-bottom: 12px;
+}
+
+.desc-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #aeaeb2;
+  margin-bottom: 12px;
+}
+
+.desc-text-cn {
+  color: #636366;
+  font-size: 13px;
+}
+
+@media (max-width: 1024px) {
+  .project-detail-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .project-card {
+    width: 100% !important;
+    margin: 0 0 40px 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    margin-bottom: 60px;
+  }
+
+  .projects-grid {
+    padding-bottom: 0;
+  }
+}

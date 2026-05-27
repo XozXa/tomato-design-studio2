@@ -1,0 +1,101 @@
+footer {
+  padding: 80px 0 60px 0;
+  border-top: 1px solid #1c1c1e;
+}
+
+.footer-cta {
+  font-size: calc(2rem + 1.5vw);
+  font-weight: 800;
+  margin-bottom: 50px;
+  max-width: 700px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  font-size: 15px;
+}
+
+.contact-item h4 {
+  color: #636366;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.contact-item p {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.contact-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  color: #FF3B30;
+}
+
+/* Copy button */
+.copy-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.copy-btn:hover {
+  color: #FF3B30;
+}
+
+/* Copy toast */
+.copy-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  z-index: 9999;
+  animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+  15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+}
+
+.footer-bottom {
+  margin-top: 80px;
+  font-size: 12px;
+  color: #3a3a3c;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 60px 0 40px 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+  }
+}
