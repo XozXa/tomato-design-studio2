@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Footer.css';
 
+const TOAST_DURATION_MS = 2000;
+
 interface FooterProps {
   onHoverStart: (type: 'project' | 'other') => void;
   onHoverEnd: () => void;
@@ -13,9 +15,9 @@ export function Footer({ onHoverStart, onHoverEnd }: FooterProps) {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(label);
-      setTimeout(() => setCopied(null), 2000);
+      setTimeout(() => setCopied(null), TOAST_DURATION_MS);
     } catch (err) {
-      console.error('复制失败', err);
+      console.error('Failed to copy', err);
     }
   };
 
@@ -71,7 +73,7 @@ export function Footer({ onHoverStart, onHoverEnd }: FooterProps) {
       </div>
 
       {copied && (
-        <div className="copy-toast">复制成功</div>
+        <div className="copy-toast">Copied!</div>
       )}
 
       <div className="footer-bottom">

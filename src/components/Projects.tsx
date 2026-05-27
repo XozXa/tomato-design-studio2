@@ -78,8 +78,8 @@ export function Projects({ onHoverStart, onHoverEnd }: ProjectsProps) {
           <div className="desc-section">
             <div className="desc-label">{groovyDescription.brandPositioning}</div>
             <div className="desc-tags">
-              {groovyDescription.tags.map((tag, i) => (
-                <span key={i} className="tag">{tag}</span>
+              {groovyDescription.tags.map((tag) => (
+                <span key={tag} className="tag">{tag}</span>
               ))}
             </div>
             <div className="desc-tags-cn">{groovyDescription.tagsCn}</div>
@@ -120,8 +120,8 @@ export function Projects({ onHoverStart, onHoverEnd }: ProjectsProps) {
           <div className="desc-section">
             <div className="desc-label">{biteDescription.brandPositioning}</div>
             <div className="desc-tags">
-              {biteDescription.tags.map((tag, i) => (
-                <span key={i} className="tag">{tag}</span>
+              {biteDescription.tags.map((tag) => (
+                <span key={tag} className="tag">{tag}</span>
               ))}
             </div>
             <div className="desc-tags-cn">{biteDescription.tagsCn}</div>
@@ -190,8 +190,8 @@ export function Projects({ onHoverStart, onHoverEnd }: ProjectsProps) {
           <div className="desc-section">
             <div className="desc-label">{tactDescription.brandPositioning}</div>
             <div className="desc-tags">
-              {tactDescription.tags.map((tag, i) => (
-                <span key={i} className="tag">{tag}</span>
+              {tactDescription.tags.map((tag) => (
+                <span key={tag} className="tag">{tag}</span>
               ))}
             </div>
             <div className="desc-tags-cn">{tactDescription.tagsCn}</div>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
@@ -8,33 +8,39 @@ import './App.css';
 function App() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  const [cursorText, setCursorText] = useState('');
-  const cursorRef = useRef<HTMLDivElement>(null);
+  const [hoverType, setHoverType] = useState<'project' | 'other' | null>(null);
+  const cursorText = isHovering ? (hoverType === 'project' ? 'VIEW' : '＋') : '';
 
   useEffect(() => {
+    let rafId: number;
     const handleMouseMove = (e: MouseEvent) => {
-      setCursorPos({ x: e.clientX, y: e.clientY });
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        setCursorPos({ x: e.clientX, y: e.clientY });
+      });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const handleHoverStart = (type: 'project' | 'other') => {
     setIsHovering(true);
-    setCursorText(type === 'project' ? 'VIEW' : '＋');
+    setHoverType(type);
   };
 
   const handleHoverEnd = () => {
     setIsHovering(false);
-    setCursorText('');
+    setHoverType(null);
   };
 
   return (
     <div className="app">
       {/* Custom Cursor */}
       <div
-        ref={cursorRef}
         className={`custom-cursor ${isHovering ? 'hovering' : ''}`}
         style={{ left: cursorPos.x, top: cursorPos.y }}
       >
