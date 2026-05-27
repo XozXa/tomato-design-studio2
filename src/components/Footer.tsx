@@ -73,7 +73,7 @@ export function Footer({ onHoverStart, onHoverEnd }: FooterProps) {
       </div>
 
       {copied && (
-        <div className="copy-toast">Copied!</div>
+        <div className="copy-toast">复制成功</div>
       )}
 
       <div className="footer-bottom">
